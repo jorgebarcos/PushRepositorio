@@ -1,5 +1,6 @@
 {
   "projects": {
-    "pruebas": "notification-push-d46d9"
+    "pruebas": "notification-push-d46d9",
+    "default": "notification-push-d46d9"
   }
 }
