@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#008000" /> 
+    <title>Push</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <h1 class="container">Notificaciones Push!!!</h1>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyDE2qwKTzImFoNISJdzCl3AfjxYQMtBbSI",
+            authDomain: "notification-push-d46d9.firebaseapp.com",
+            databaseURL: "https://notification-push-d46d9.firebaseio.com",
+            projectId: "notification-push-d46d9",
+            storageBucket: "notification-push-d46d9.appspot.com",
+            messagingSenderId: "633511189905",
+            appId: "1:633511189905:web:2590c91756f65c58308e30"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function() {
+                console.log('Service Worker Registrado');
+            });
+        }
+    </script>
+
+    <!-- <script>
+        const messaging = firebase.messaging();
+
+        messaging.requestPermission()
+        .then(function() {
+        console.log('Se han aceptado las notificaciones');
+        return messaging.getToken();
+        })
+        .then(function(token) {
+        if(token) {
+            guardarToken(token)
+        } else {
+            anularToken();
+        }
+        })
+        .catch(function(err) {
+        mensajeFeedback(err);
+        console.log('No se ha recibido permiso/token: ', err);
+        })
+    </script> -->
+
+    <script>
+        const messaging = firebase.messaging();
+
+        messaging.requestPermission()
+        .then(function() {
+        console.log('Permiso de notificación concedido.');
+        return messaging.getToken();
+        })
+        .then(function(token) {
+        console.log(token);
+        })
+        .catch(function(err) {
+        console.log('No se pudo obtener permiso para notificar.', err);
+        })
+    </script>
+</body>
+</html>

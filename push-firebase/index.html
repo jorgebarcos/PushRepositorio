@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push notificación</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css">
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+
+
+</head>
+<body>
+    
+    <h1>Hola</h1>
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    
+    <script>
+    // Configuración de Firebase
+    var firebaseConfig = {
+        apiKey: "AIzaSyDE2qwKTzImFoNISJdzCl3AfjxYQMtBbSI",
+        authDomain: "notification-push-d46d9.firebaseapp.com",
+        databaseURL: "https://notification-push-d46d9.firebaseio.com",
+        projectId: "notification-push-d46d9",
+        storageBucket: "notification-push-d46d9.appspot.com",
+        messagingSenderId: "633511189905",
+        appId: "1:633511189905:web:2590c91756f65c58308e30"
+    };
+    // Inicializa Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+<!-- <script> 
+    const messaging = firebase.messaging ();
+    messaging.requestPermission () 
+    .then (function () { 
+      console.log ('Permiso de notificación otorgado.'); 
+      return messaging.getToken (); 
+    }) 
+    .then (function (token) { 
+      console.log (token); 
+    }) 
+    .catch (function (err) { 
+      console.log ('No se puede obtener permiso para notificar.', err); 
+    }) 
+  </script> -->
+    <script src="./js/index.js"></script>
+    <script src="./firebase-messaging-sw.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "name": "NubiAPP",
+    "short_name": "NubiAPP",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "img/icons-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+            },
+        {
+        "src": "img/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+        },
+        {
+        "src": "img/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+        }
+        ],
+    "display": "standalone",
+    "background_color": "#d5f6ff",
+    "theme_color": "#d5f6ff",
+    "orientation": "portrait",
+    "gcm_sender_id": "103953800507"
+
+}

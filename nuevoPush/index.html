@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones web</title>
+    <script src="js/push.min.js"></script>
+
+</head>
+<body>
+
+    <script>
+        Push.create("Nubicom",{
+            body: "Este es el cuerpo de la notificación",
+            icon: "img/icons-512.png",
+            timeout:4000,
+            onCLick: () => {
+                window.location="http://empleados.nubicom.com.ar/login.php";
+                this.close();
+
+            }
+        });
+    </script>
+    
+</body>
+</html>
